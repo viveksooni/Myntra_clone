@@ -14,7 +14,10 @@ const FetchItems = () => {
     const signal = controller.signal;
 
     dispatch(fetchStatusActions.markFetchingStarted());
-    fetch("http://localhost:8080/items", { signal })
+    fetch(
+      "https://animated-waddle-7wx6pvvpw5jfpxvg-8080.app.github.dev/items",
+      { signal }
+    )
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(fetchStatusActions.markFetchDone());
