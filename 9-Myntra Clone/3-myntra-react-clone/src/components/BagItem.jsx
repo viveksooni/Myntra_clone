@@ -3,8 +3,8 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { bagActions } from "../store/bagSlice";
 
 const BagItem = ({ item }) => {
+  
   const dispatch = useDispatch();
-
   const handleRemoveItem = () => {
     dispatch(bagActions.removeFromBag(item.id));
   };

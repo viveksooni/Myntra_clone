@@ -8,6 +8,7 @@ const FetchItems = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+  
     if (fetchStatus.fetchDone) return;
 
     const controller = new AbortController();
@@ -15,11 +16,12 @@ const FetchItems = () => {
 
     dispatch(fetchStatusActions.markFetchingStarted());
     fetch(
-      "https://animated-waddle-7wx6pvvpw5jfpxvg-8080.app.github.dev/items",
+      "https://miniature-space-fishstick-9wxrj77jx6x3pwgq-8080.app.github.dev/items",
       { signal }
     )
       .then((res) => res.json())
       .then(({ items }) => {
+        console.log(items);
         dispatch(fetchStatusActions.markFetchDone());
         dispatch(fetchStatusActions.markFetchingFinished());
         dispatch(itemsActions.addInitialItems(items[0]));
