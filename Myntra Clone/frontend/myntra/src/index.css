@@ -401,3 +401,8 @@ a.action_container:link {
 .container{
   display: flex;
 }
+.loader {
+  width: 5rem;
+  height: 5rem;
+  margin-top:15%;
+}
